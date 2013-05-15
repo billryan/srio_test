@@ -1,0 +1,15 @@
+# Output products list for <phy_ila>
+_xmsgs\
+phy_ila.asy
+phy_ila.cdc
+phy_ila.gise
+phy_ila.ise
+phy_ila.ngc
+phy_ila.v
+phy_ila.veo
+phy_ila.xco
+phy_ila.xise
+phy_ila_flist.txt
+phy_ila_readme.txt
+phy_ila_xdb\tmp\
+phy_ila_xmdf.tcl

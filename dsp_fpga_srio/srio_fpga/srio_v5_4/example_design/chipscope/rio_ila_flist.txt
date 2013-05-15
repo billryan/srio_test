@@ -1,0 +1,15 @@
+# Output products list for <rio_ila>
+_xmsgs\
+rio_ila.asy
+rio_ila.cdc
+rio_ila.gise
+rio_ila.ise
+rio_ila.ngc
+rio_ila.v
+rio_ila.veo
+rio_ila.xco
+rio_ila.xise
+rio_ila_flist.txt
+rio_ila_readme.txt
+rio_ila_xdb\tmp\
+rio_ila_xmdf.tcl

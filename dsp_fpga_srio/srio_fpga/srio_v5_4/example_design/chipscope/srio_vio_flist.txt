@@ -1,0 +1,15 @@
+# Output products list for <srio_vio>
+_xmsgs\
+srio_vio.asy
+srio_vio.cdc
+srio_vio.gise
+srio_vio.ise
+srio_vio.ngc
+srio_vio.v
+srio_vio.veo
+srio_vio.xco
+srio_vio.xise
+srio_vio_flist.txt
+srio_vio_readme.txt
+srio_vio_xdb\tmp\
+srio_vio_xmdf.tcl

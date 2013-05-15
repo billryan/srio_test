@@ -1,0 +1,3472 @@
+Release 11.3 Map L.57 (nt)
+Xilinx Mapping Report File for Design 'srio_v5_4_top'
+
+Design Information
+------------------
+Command Line   : map -ise srio_v5_4_ise_prj.ise -intstyle ise -p
+xc5vsx50t-ff1136-1 -w -logic_opt off -ol std -t 1 -register_duplication off
+-global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o
+srio_v5_4_top_map.ncd srio_v5_4_top.ngd srio_v5_4_top.pcf 
+Target Device  : xc5vsx50t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.51.18.1 $
+Mapped Date    : Wed Jun 02 12:39:57 2010
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   35
+Slice Logic Utilization:
+  Number of Slice Registers:                 6,524 out of  32,640   19%
+    Number used as Flip Flops:               6,524
+  Number of Slice LUTs:                      6,394 out of  32,640   19%
+    Number used as logic:                    6,094 out of  32,640   18%
+      Number using O6 output only:           5,889
+      Number using O5 output only:              94
+      Number using O5 and O6:                  111
+    Number used as Memory:                     223 out of  12,480    1%
+      Number used as Dual Port RAM:            214
+        Number using O6 output only:             8
+        Number using O5 output only:             7
+        Number using O5 and O6:                199
+      Number used as Shift Register:             9
+        Number using O6 output only:             9
+    Number used as exclusive route-thru:        77
+  Number of route-thrus:                       174
+    Number using O6 output only:               170
+    Number using O5 output only:                 3
+    Number using O5 and O6:                      1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 2,641 out of   8,160   32%
+  Number of LUT Flip Flop pairs used:        8,830
+    Number with an unused Flip Flop:         2,306 out of   8,830   26%
+    Number with an unused LUT:               2,436 out of   8,830   27%
+    Number of fully used LUT-FF pairs:       4,088 out of   8,830   46%
+    Number of unique control sets:             258
+    Number of slice register sites lost
+      to control set restrictions:             470 out of  32,640    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                         7 out of     480    1%
+    Number of LOCed IOBs:                        7 out of       7  100%
+    Number of bonded IPADs:                      4 out of      38   10%
+    Number of bonded OPADs:                      2 out of      24    8%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       8 out of     132    6%
+    Number using BlockRAM only:                  8
+    Total primitives used:
+      Number of 36k BlockRAM used:               8
+    Total Memory used (KB):                    288 out of   4,752    6%
+  Number of BUFG/BUFGCTRLs:                      4 out of      32   12%
+    Number used as BUFGs:                        4
+  Number of BUFDSs:                              1 out of       6   16%
+  Number of GTP_DUALs:                           1 out of       6   16%
+    Number of LOCed GTP_DUALs:                   1 out of       1  100%
+  Number of PLL_ADVs:                            1 out of       6   16%
+
+Average Fanout of Non-Clock Nets:                4.22
+
+Peak Memory Usage:  470 MB
+Total REAL time to MAP completion:  4 mins 41 secs 
+Total CPU time to MAP completion:   4 mins 22 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+Section 13 - Control Set Information
+Section 14 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+WARNING:LIT:243 - Logical network ireq_addr<31> has no load.
+WARNING:LIT:395 - The above warning message is repeated 187 more times for the
+   following (max. 5 shown):
+   ireq_addr<32>,
+   ireq_addr<33>,
+   rio_de_wrapper/reg_manager/mgt_a<0>,
+   rio_de_wrapper/reg_manager/mgt_a<1>,
+   rio_de_wrapper/reg_manager/mgt_a<10>
+   To see the details of these warning messages, please use the -detail switch.
+WARNING:MapLib:701 - Signal test connected to top level port test has been
+   removed.
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/target_user/ram
+   of frag RDRCLKU connected to power/ground net
+   user_top/target_user/ram_RDRCLKU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/target_user/ram
+   of frag RDRCLKL connected to power/ground net
+   user_top/target_user/ram_RDRCLKL_tiesig
+WARNING:Pack:2515 - The LUT-1 inverter
+   "rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_mgt_top/LN
+   K_PORTERR_N1_INV_0" failed to join the OLOGIC comp matched to output buffer
+   "led0_1_OBUF".  This may result in suboptimal timing.  The LUT-1 inverter
+   rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_mgt_top/LNK
+   _PORTERR_N1_INV_0 drives multiple loads.
+WARNING:PhysDesignRules:1841 - One or more GTPs are being used in this design.
+   Evaluate the SelectIO-To-GTP Crosstalk section of the Virtex-5 RocketIO GTP
+   Transceiver User Guide to ensure that the design SelectIO usage meets the
+   guidelines to minimize the impact on GTP performance. 
+
+Section 3 - Informational
+-------------------------
+INFO:Security:56 - Part 'xc5vsx50t' is not a WebPack part.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:856 - PLL_ADV phy_1x_ser_clk/u_rio_sercore_pll CLKIN2 pin was
+   disconnected because a constant 1 is driving the CLKINSEL pin.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 510 block(s) removed
+  82 block(s) optimized away
+ 553 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "user_top/initiator_user/history_bram/hist_ram" (RAMB36_EXP)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<0>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_0" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<1>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_1" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<2>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_2" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<3>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_3" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<4>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_4" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<5>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_5" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<6>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_6" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<7>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_7" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<8>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_8" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<9>" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_9" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<12>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<10>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_10" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<13>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<11>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_11" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<14>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<12>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_12" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<15>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<13>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_13" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<16>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<14>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_14" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<17>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<15>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_15" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<18>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<16>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_16" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<19>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<17>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_17" (FF)
+removed.
+   The signal "user_top/initiator_user/rram_dob<20>" is loadless and has been
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<18>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_18" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<0>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_0" (FF) removed.
+     The signal "iresp_src_id<0>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_23" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<8>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<8>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<19>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_19" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<1>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_1" (FF) removed.
+     The signal "iresp_src_id<1>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_24" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<9>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<9>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<20>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_20" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<2>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_2" (FF) removed.
+     The signal "iresp_src_id<2>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_25" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<10>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<10>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<21>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_21" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<3>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_3" (FF) removed.
+     The signal "iresp_src_id<3>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_26" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<11>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<11>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<22>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_22" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<4>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_4" (FF) removed.
+     The signal "iresp_src_id<4>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_27" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<12>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<12>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<23>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_23" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<5>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_5" (FF) removed.
+     The signal "iresp_src_id<5>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_28" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<13>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<13>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<24>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_24" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<6>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_6" (FF) removed.
+     The signal "iresp_src_id<6>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_29" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<14>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<14>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_dib<25>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_dib_25" (FF)
+removed.
+   The signal "user_top/initiator_user/iresp_handler/q_src_id<7>" is loadless and
+has been removed.
+    Loadless block "user_top/initiator_user/iresp_handler/q_src_id_7" (FF) removed.
+     The signal "iresp_src_id<7>" is loadless and has been removed.
+      Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_30" (FF)
+removed.
+       The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_src_id_o<15>" is
+loadless and has been removed.
+        Loadless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_srcid_o<15>1"
+(ROM) removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<1>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_1" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<2>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_2" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<3>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_3" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<4>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_4" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<5>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_5" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<6>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_6" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<7>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_7" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_addrb<8>" is loadless
+and has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_addrb_8" (FF)
+removed.
+ The signal "user_top/initiator_user/iresp_handler/h_hist_web" is loadless and
+has been removed.
+  Loadless block "user_top/initiator_user/iresp_handler/h_hist_web" (FF) removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/full" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<103>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<102>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<101>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<100>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<99>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<98>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<97>" is
+sourceless and has been removed.
+The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/dout<96>" is
+sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_bin_xor0000" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_bin_xor0001" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_bin_xor0002" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_asreg<3>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_asreg<2>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_asreg<1>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_asreg<0>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc<3>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc<2>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc<1>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc<0>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_xor0000" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_xor0001" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/w
+r_pntr_gc_xor0002" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count3" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/count<3>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count_xor<3>11" (ROM) removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/gwa
+s.wsts/c2/dout_i_SW3" (ROM) removed.
+  The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/N19" is
+sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/gwa
+s.wsts/c2/dout_i_SW4" (ROM) removed.
+  The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/N20" is
+sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count2" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/count<2>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count_xor<2>11" (ROM) removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/gwa
+s.wsts/ram_almost_full_i_mux0000_SW0" (ROM) removed.
+  The signal "user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/N14" is
+sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count1" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/count<1>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count_xor<1>11" (ROM) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/count<0>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wpn
+tr/Mcount_count_xor<0>11_INV_0" (BUF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<55>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_55_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_55_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_55" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<55>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_55" (FF) removed.
+      The signal "ireq_addr<32>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<54>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_54_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_54_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_54" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<54>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_54" (FF) removed.
+      The signal "ireq_addr<33>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<56>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_56_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_56_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_56" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<56>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_56" (FF) removed.
+      The signal "ireq_addr<31>" is sourceless and has been removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<97>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_97_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_97_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_97" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<97>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_97" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<96>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_96_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_96_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_96" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<96>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_96" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<99>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_99_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_99_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_99" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<99>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_99" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<98>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_98_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_98_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_98" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<98>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_98" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<101>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_101_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_101_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_101" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<101>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_101" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<100>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_100_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_100_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_100" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<100>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_100" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<103>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_103_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_103_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_103" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<103>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_103" (FF) removed.
+The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/_varindex0000<102>" is sourceless and has been removed.
+ Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_102_rstpot" (ROM) removed.
+  The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_102_rstpot" is sourceless and has been removed.
+   Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i_102" (FF) removed.
+    The signal
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/dout_i<102>" is sourceless and has been removed.
+     Sourceless block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/dout_i
+_102" (FF) removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/LNK_PNA_N" is sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/LNK_MCE_DEC_N" is sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/LNK_MCE_DEC_N_mux0000" is sourceless and has been
+removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/LNK_MCE_DEC_N" (FF) removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/lnk_mce_d2_mux0000" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/lnk_mce_d2" (FF) removed.
+  The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/lnk_mce_d2" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/LNK_MCE_DEC_N_mux00001" (ROM) removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_l_comb" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_l_d1" (FF) removed.
+  The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_l_d1" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/lnk_mce_d2_mux00001" (ROM) removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_h_comb" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_h_d1" (FF) removed.
+  The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_h_d1" is sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_SHADOW_mux0000<2>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_mux0000<2>" is sourceless
+and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_oplm_top/u_op
+lm_pcs_top/u_oplm_pcs_tx_top/u_oplm_pcs_tx_initctl/u_oplm_pcs_tx_initctl_fsm/for
+ce_reinit_iq" is sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<4>" is sourceless and has
+been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_0" (FF) removed.
+  The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count<0>" is sourceless and has been
+removed.
+   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/LNK_PNA_N_mux000011" (ROM) removed.
+    The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/LNK_PNA_N_mux0000" is sourceless and has been
+removed.
+     Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/LNK_PNA_N" (FF) removed.
+   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<3>_G" (ROM) removed.
+    The signal "rio_de_wrapper/phy_wrapper/phy_1x_ser/N1143" is sourceless and has
+been removed.
+     Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<3>" (MUX) removed.
+      The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<3>" is sourceless and has
+been removed.
+       Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_1" (FF) removed.
+        The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count<1>" is sourceless and has been
+removed.
+         Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<3>_F" (ROM) removed.
+          The signal "rio_de_wrapper/phy_wrapper/phy_1x_ser/N1142" is sourceless and has
+been removed.
+         Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<4>_F" (ROM) removed.
+          The signal "rio_de_wrapper/phy_wrapper/phy_1x_ser/N1144" is sourceless and has
+been removed.
+           Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<4>" (MUX) removed.
+         Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<4>_G" (ROM) removed.
+          The signal "rio_de_wrapper/phy_wrapper/phy_1x_ser/N1145" is sourceless and has
+been removed.
+         Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>2" (ROM) removed.
+          The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>2" is sourceless and has
+been removed.
+           Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>_f7" (MUX) removed.
+            The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>" is sourceless and has
+been removed.
+             Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_4" (FF) removed.
+              The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count<4>" is sourceless and has been
+removed.
+               Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>_f7" (MUX) removed.
+                The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>" is sourceless and has
+been removed.
+                 Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_3" (FF) removed.
+                  The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count<3>" is sourceless and has been
+removed.
+                   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>1" (ROM) removed.
+                    The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>1" is sourceless and has
+been removed.
+                   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>2" (ROM) removed.
+                    The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<1>2" is sourceless and has
+been removed.
+                   Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>1" (ROM) removed.
+                    The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>1" is sourceless and has
+been removed.
+                     Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>_f7" (MUX) removed.
+                      The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>" is sourceless and has
+been removed.
+                       Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_2" (FF) removed.
+                        The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count<2>" is sourceless and has been
+removed.
+                         Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>2" (ROM) removed.
+                          The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<2>2" is sourceless and has
+been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not0001" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N" (FF)
+removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not000128"
+is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not000180"
+(ROM) removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not000157"
+is sourceless and has been removed.
+The signal
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>1" is sourceless and has
+been removed.
+The signal
+"rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/bram_crf" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/RX_crf" (FF)
+removed.
+  The signal "rio_de_wrapper/log_rlnk_crf" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_shadow/shdw_rx_crf" (FF) removed.
+    The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/rx_shadow/shdw_rx_crf" is
+sourceless and has been removed.
+     Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_shadow/int_rx_crf1" (ROM) removed.
+      The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/rx_crf" is sourceless and
+has been removed.
+       Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_data_pipe/crf_out" (FF)
+removed.
+        The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_data_pipe/crf_out" is
+sourceless and has been removed.
+         Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/crfq"
+(FF) removed.
+          The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/crfq"
+is sourceless and has been removed.
+           Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/crfqq"
+(FF) removed.
+            The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/crfqq"
+is sourceless and has been removed.
+             Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_50" (FF)
+removed.
+              The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<50>" is
+sourceless and has been removed.
+             Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/mreq_data_mux/mreq_crf_o1" (ROM)
+removed.
+              The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_mreq_crf_o" is
+sourceless and has been removed.
+               Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg_51" (FF)
+removed.
+                The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg<51>" is
+sourceless and has been removed.
+             Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_crf_o1" (ROM)
+removed.
+              The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_crf_o" is
+sourceless and has been removed.
+               Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_55" (FF)
+removed.
+                The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<55>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<2>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<1>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg<60>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg<61>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg<62>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<11>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<12>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<13>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<14>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/tx_rem<2>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<34>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<35>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<36>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<37>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<38>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<39>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<40>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<41>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<62>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<63>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<64>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<65>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<66>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<67>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<68>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<69>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<70>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<71>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<72>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<73>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<74>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<75>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<76>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<77>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<78>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<79>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<80>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<81>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<82>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<83>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<84>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<85>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<86>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<87>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<88>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<89>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<90>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<91>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<92>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<93>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<94>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<95>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<96>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<97>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<98>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<99>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<100>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<101>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<102>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<103>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<104>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<105>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<106>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<107>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<108>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<109>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<110>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<111>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<112>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<113>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<114>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<115>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<116>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<117>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<118>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<119>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<120>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<121>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<122>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<123>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<124>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<125>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<126>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<127>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<128>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<129>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<56>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<57>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<59>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<60>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<61>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<39>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<40>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<41>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<42>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<43>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<44>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<45>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg<46>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<70>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<71>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<72>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<73>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<74>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<75>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<76>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<77>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<78>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<79>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<80>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<81>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<82>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<83>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<84>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<85>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<166>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<167>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<168>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<169>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<170>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<171>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<172>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<173>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<174>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg<199>" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<25>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_8" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<8>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_174" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<26>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_7" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<7>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_173" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<27>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_6" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<6>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_172" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<28>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_5" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<5>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_171" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<29>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_4" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<4>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_170" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<30>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_3" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<3>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_169" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<31>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_2" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<2>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_168" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<32>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_1" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<1>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_167" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<33>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_0" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq<0>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_166" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq<3>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_status_o<3>1"
+(ROM) removed.
+  The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_status_o<3>" is
+sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_14" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq<2>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_status_o<2>1"
+(ROM) removed.
+  The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_status_o<2>" is
+sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_13" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq<1>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_status_o<1>1"
+(ROM) removed.
+  The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_status_o<1>" is
+sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_12" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq<0>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_status_o<0>1"
+(ROM) removed.
+  The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_status_o<0>" is
+sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_11" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<15>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_15" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<15>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_85" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_15_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_15_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_15" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<14>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_14" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<14>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_84" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_14_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_14_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_14" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<13>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_13" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<13>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_83" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_13_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_13_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_13" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<12>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_12" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<12>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_82" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_12_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_12_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_12" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<11>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_11" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<11>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_81" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_11_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_11_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_11" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<10>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_10" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<10>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_80" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_10_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_10_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_10" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<9>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_9" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<9>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_79" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_9_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_9_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_9" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<8>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_8" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<8>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_78" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_8_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_8_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_8" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<7>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_7" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<7>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_77" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_7_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_7_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_7" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<6>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_6" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<6>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_76" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_6_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_6_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_6" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<5>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_5" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<5>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_75" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_5_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_5_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_5" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<4>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_4" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<4>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_74" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_4_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_4_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_4" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<3>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_3" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<3>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_73" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_3_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_3_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_3" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<2>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_2" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<2>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_72" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_2_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_2_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_2" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<1>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_1" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<1>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_71" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_1_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_1_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_1" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq<0>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq_0" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oqq<0>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_70" (FF)
+removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_0_rstpot" (ROM) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_0_rstpot" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_0" (FF) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/size_d
+ecodeq<8>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+_8" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+<8>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_61" (FF)
+removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/mreq_data_mux/mreq_byte_count_o<8>1"
+(ROM) removed.
+    The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_mreq_byte_count_o<8>"
+is sourceless and has been removed.
+     Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg_62" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/size_d
+ecodeq<7>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+_7" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+<7>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_60" (FF)
+removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/mreq_data_mux/mreq_byte_count_o<7>1"
+(ROM) removed.
+    The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_mreq_byte_count_o<7>"
+is sourceless and has been removed.
+     Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg_61" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/size_d
+ecodeq<6>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+_6" (FF) removed.
+  The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/sizeqq
+<6>" is sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_59" (FF)
+removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/mreq_data_mux/mreq_byte_count_o<6>1"
+(ROM) removed.
+    The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_mreq_byte_count_o<6>"
+is sourceless and has been removed.
+     Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_mreq/q_rx_inreg_60" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/rem<2>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/q_rem_2" (FF) removed.
+  The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/q_rem<2>" is
+sourceless and has been removed.
+   Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/s1_ireq_rem<2>1" (ROM)
+removed.
+    The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/s1_ireq_rem<2>" is
+sourceless and has been removed.
+     Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/s2_ireq_rem_2" (FF)
+removed.
+      The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/s2_ireq_rem<2>" is
+sourceless and has been removed.
+       Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/shdw_tx_ireq_rem_2"
+(FF) removed.
+        The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/shdw_tx_ireq_rem<2>" is
+sourceless and has been removed.
+         Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>1" (ROM)
+removed.
+          The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>1" is
+sourceless and has been removed.
+           Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>_f7"
+(MUX) removed.
+            The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>" is
+sourceless and has been removed.
+             Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/tx_rem_2" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/q_mresp_crf" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_crf" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/s1_tresp_dsc_n" is
+sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_dsc_n_or0000"
+is sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_dsc_n" is
+sourceless and has been removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<63>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_129" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<62>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_128" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<61>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_127" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<60>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_126" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<59>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_125" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<58>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_124" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<57>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_123" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<56>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_122" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<55>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_121" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<54>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_120" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<53>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_119" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<52>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_118" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<51>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_117" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<50>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_116" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<49>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_115" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<48>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_114" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<47>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_113" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<46>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_112" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<45>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_111" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<44>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_110" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<43>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_109" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<42>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_108" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<41>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_107" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<40>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_106" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<39>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_105" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<38>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_104" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<37>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_103" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<36>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_102" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<35>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_101" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<34>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_100" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<33>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_99" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<32>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_98" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<31>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_97" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<30>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_96" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<29>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_95" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<28>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_94" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<27>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_93" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<26>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_92" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<25>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_91" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<24>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_90" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<23>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_89" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<22>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_88" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<21>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_87" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<20>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_86" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<19>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_85" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<18>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_84" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<17>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_83" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<16>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_82" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<15>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_81" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<14>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_80" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<13>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_79" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<12>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_78" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<11>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_77" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<10>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_76" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<9>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_75" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<8>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_74" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<7>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_73" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<6>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_72" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<5>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_71" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<4>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_70" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<3>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_69" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<2>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_68" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<1>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_67" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_data_o<0>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_66" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_prio_o<1>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_57" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_prio_o<0>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_56" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<15>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_46" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<14>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_45" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<13>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_44" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<12>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_43" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<11>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_42" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<10>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_41" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<9>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_40" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_dest_id_o<8>" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_39" (FF)
+removed.
+The signal "rio_de_wrapper/log_io_top/U0/log_io_inst/int_iresp_eof_n_o" is
+sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_1" (FF)
+removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_and0000" is sourceless and has been removed.
+The signal "rio_de_wrapper/log_io_top/N568" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/db_inf
+oq_and00001" (ROM) removed.
+The signal "rio_de_wrapper/log_io_top/N456" is sourceless and has been removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/req_bytes<8>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/bytes<8>1" (ROM) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/req_bytes<7>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/bytes<7>1" (ROM) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/req_bytes<6>" is sourceless and has been removed.
+ Sourceless block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e/bytes<6>1" (ROM) removed.
+The signal
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>2" is
+sourceless and has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "N72" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/word_addr_counter<7>1_SW0" (ROM)
+removed.
+The signal "phy_1x_ser_clk/test_bufg" is unused and has been removed.
+ Unused block "phy_1x_ser_clk/test_bufg_a" (CKBUF) removed.
+  The signal "test_IBUFG" is unused and has been removed.
+   Unused block "test_IBUFG" (CKBUF) removed.
+    The signal "test" is unused and has been removed.
+     Unused block "test" (PAD) removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<11>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<11>" (MUX)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<12>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<12>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<12>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<12>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<13>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<13>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<13>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<13>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<14>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<14>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<14>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<14>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<15>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<15>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<15>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<15>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<16>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<16>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<16>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<16>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<17>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<17>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<17>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<17>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<18>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<18>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<18>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<18>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<19>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<19>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<19>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<19>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<20>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<20>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<20>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<20>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<21>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<21>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<21>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<21>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<22>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_cy<22>" (MUX)
+removed.
+  The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<22>" is unused
+and has been removed.
+   Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<22>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<23>" is unused
+and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_lut<23>" (ROM)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<0>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_0" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<23>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<23>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<23>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<23>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<1>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_1" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<22>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<22>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<22>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<22>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<10>" is unused and has been
+removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_10" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<13>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<13>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<13>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<13>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<11>" is unused and has been
+removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_11" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<12>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<12>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<12>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<12>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<2>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_2" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<21>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<21>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<21>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<21>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<3>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_3" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<20>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<20>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<20>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<20>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<4>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_4" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<19>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<19>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<19>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<19>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<5>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_5" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<18>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<18>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<18>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<18>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<6>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_6" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<17>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<17>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<17>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<17>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<7>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_7" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<16>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<16>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<16>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<16>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<8>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_8" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<15>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<15>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<15>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<15>" (XOR)
+removed.
+The signal "rio_de_wrapper/reg_manager/mgt_a<9>" is unused and has been removed.
+ Unused block "rio_de_wrapper/reg_manager/mgt_a_9" (FF) removed.
+  The signal "rio_de_wrapper/reg_manager/mgt_a_mux0000<14>" is unused and has been
+removed.
+   Unused block "rio_de_wrapper/reg_manager/mgt_a_mux0000<14>1" (ROM) removed.
+    The signal "rio_de_wrapper/reg_manager/mgt_a_share0000<14>" is unused and has
+been removed.
+     Unused block "rio_de_wrapper/reg_manager/Msub_mgt_a_share0000_xor<14>" (XOR)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_arb/cs_FSM_FFd1-In_SW0" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<0>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<10>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<11>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<12>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<13>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<14>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<15>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<16>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<17>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<18>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<19>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<1>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<20>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<21>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<22>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<23>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<24>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<25>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<26>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<27>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<28>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<29>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<2>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<30>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<31>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<32>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<33>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<34>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<35>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<36>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<37>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<38>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<39>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<3>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<40>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<41>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<42>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<43>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<44>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<45>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<46>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<47>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<48>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<49>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<4>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<50>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<51>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<52>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<53>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<54>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<55>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<56>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<57>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<58>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<59>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<5>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<60>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<61>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<62>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<63>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<6>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<7>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<8>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_data_o<9>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<10>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<11>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<12>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<13>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<14>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<15>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<8>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_destid_o<9>1"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_eof_n_o1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_prio_o<0>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/iresp_data_mux/iresp_prio_o<1>1" (ROM)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<25>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<26>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<27>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<28>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<29>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<30>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<31>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<32>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/addres
+sqq_mux0000<33>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e_Mrom_req_bytes111" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e_Mrom_req_bytes12" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/rx_siz
+e_Mrom_req_bytes21" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq_0" (FF) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq_1" (FF) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq_2" (FF) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/status
+qq_3" (FF) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_data_top/rx_header_extractor/ttypeq
+_not000121_SW0" (ROM) removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/q_rx_inreg_2" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_199" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_34" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_35" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_36" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_37" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_38" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_39" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_40" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_41" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_62" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_63" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_64" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_treq/q_rx_inreg_65" (FF)
+removed.
+Unused block
+"rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_rem<2>2" (ROM)
+removed.
+Unused block "rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_ireq/rem<2>2"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_h_comb1" (ROM) removed.
+Unused block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_decode/s_mce_l_comb1" (ROM) removed.
+Unused block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_rx_top/ollm_rx_outputrecovery/pna_count_mux0000<0>1" (ROM) removed.
+Unused block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not000128"
+(ROM) removed.
+Unused block
+"rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_ol
+lm_tx_top/u_ollm_tx_framer_top/u_ollm_tx_phy_td_snooper/MCAST_ACK_N_not000157"
+(ROM) removed.
+Unused block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/gwa
+s.wsts/ram_full_i" (FF) removed.
+Unused block
+"user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/mem/gdm.dm
+/Mram_RAM17" (RAM32M) removed.
+Unused block "user_top/initiator_user/ireq_generator/logio_ireq_fifo/GND" (ZERO)
+removed.
+Unused block "user_top/initiator_user/ireq_generator/logio_ireq_fifo/VCC" (ONE)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+FDE 		rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/lnk_rrem_q_2
+   optimized to 0
+GND 		rio_de_wrapper/buffer_sim/XST_GND
+VCC 		rio_de_wrapper/buffer_sim/XST_VCC
+LUT2 		rio_de_wrapper/log_io_top/U0/log_io_inst/rx_outreg_iresp/rx_inreg_rdy1
+LUT4 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_crf25
+LUT4 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_arbiter/d_tx_crf49
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/q_mresp_crf
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/q_mresp_ftype_2
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/q_mresp_status_0
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/q_mresp_ttype_1
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/s2_mresp_crf
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_mresp/shdw_tx_mresp_crf
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_crf
+   optimized to 0
+FDPE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_dsc_n
+   optimized to 1
+LUT2
+		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_dsc_n_or00001
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_ftype_2
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_status_0
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_status_1
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_status_2
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_status_3
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_ttype_1
+   optimized to 0
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/q_tresp_ttype_2
+   optimized to 0
+FDPE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/qq_tresp_dsc_n
+   optimized to 1
+LUT6 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/s1_tresp_dsc_n1
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/s2_tresp_crf
+   optimized to 0
+FDPE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/s2_tresp_dsc_n
+   optimized to 1
+FDE 		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/shdw_tx_tresp_crf
+   optimized to 0
+FDPE
+		rio_de_wrapper/log_io_top/U0/log_io_inst/tx_top/tx_tresp/shdw_tx_tresp_dsc_n
+   optimized to 1
+GND 		rio_de_wrapper/log_io_top/XST_GND
+VCC 		rio_de_wrapper/log_io_top/XST_VCC
+FDCE
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_o
+llm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_2
+   optimized to 0
+FDC
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_o
+llm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_SHADOW_2
+   optimized to 0
+LUT6
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_o
+llm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_SHADOW_mux0000<2>1
+LUT5
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_ollm_top/u_o
+llm_tx_top/u_ollm_tx_ackid_top/u_ollm_tx_ackid_fsm/TREM_mux0000<2>1
+FDC
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_oplm_top/u_o
+plm_pcs_top/u_oplm_pcs_tx_top/u_oplm_pcs_tx_initctl/u_oplm_pcs_tx_initctl_fsm/fo
+rce_reinit_iq
+   optimized to 0
+FDC
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_oplm_top/u_o
+plm_pcs_top/u_oplm_pcs_tx_top/u_oplm_pcs_tx_initctl/u_oplm_pcs_tx_initctl_fsm/fo
+rce_reinit_sync
+   optimized to 0
+LUT6
+		rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_oplm_top/u_o
+plm_pcs_top/u_oplm_pcs_tx_top/u_oplm_pcs_tx_initctl/u_oplm_pcs_tx_initctl_slnctm
+r/silence_tmr_done_nxt63
+GND 		rio_de_wrapper/phy_wrapper/phy_1x_ser/XST_GND
+VCC 		rio_de_wrapper/phy_wrapper/phy_1x_ser/XST_VCC
+LUT2
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_bin_xor0000_Result1
+LUT3
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_bin_xor0001_Result1
+LUT4
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_bin_xor0002_Result1
+LUT2
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_gc_xor0000_Result1
+LUT2
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_gc_xor0001_Result1
+LUT2
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+Mxor_wr_pntr_gc_xor0002_Result1
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_bin_0
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_bin_1
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_bin_2
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_bin_3
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_0
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_1
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_2
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_3
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_0
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_1
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_2
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_3
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_d1_0
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_d1_1
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_d1_2
+   optimized to 0
+FDC
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gcx.clkx/
+wr_pntr_gc_asreg_d1_3
+   optimized to 0
+LUT4
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/gw
+as.wsts/c2/dout_i_SW1
+LUT2
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/ra
+m_wr_en_i1
+FDPE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_0
+   optimized to 1
+FDPE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_1
+   optimized to 1
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_2
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_3
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d1_0
+   optimized to 0
+FDPE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d1_1
+   optimized to 1
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d1_2
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d1_3
+   optimized to 0
+FDPE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d2_0
+   optimized to 1
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d2_1
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d2_2
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d2_3
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d3_0
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d3_1
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d3_2
+   optimized to 0
+FDCE
+		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/U0/grf.rf/gl0.wr/wp
+ntr/count_d3_3
+   optimized to 0
+GND 		user_top/initiator_user/ireq_generator/logio_ireq_fifo/BU2/XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| led0<0>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led0<1>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led0<2>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led0<3>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led0<4>                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| link_reset                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| local_reset                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              | PULLUP   |          |
+| srio_rxn0                          | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| srio_rxp0                          | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| srio_txn0                          | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| srio_txp0                          | OPAD             | OUTPUT    |                      |       |          |      |              |          |          |
+| sys_clkn                           | IPAD             | INPUT     |                      |       |          |      |              |          |          |
+| sys_clkp                           | IPAD             | INPUT     |                      |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 13 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 14 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

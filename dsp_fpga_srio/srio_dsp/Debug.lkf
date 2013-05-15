@@ -1,0 +1,4 @@
+-z -c -m"./Debug/srio_a.map" -o"./Debug/srio_a.out" -w -x -i"C:/CCStudio_v3.3/C6000/csl/lib" -i"C:/CCStudio_v3.3/C6000/xdais/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/bios/lib" -i"C:/CCStudio_v3.3/bios_5_31_02/packages/ti/rtdx/lib/c6000" -i"C:/CCStudio_v3.3/C6000/cgtools/lib"
+"C:\Program Files\SEED\SEED_HPS6455\test_hps6455\dsp_fpga_srio\srio_dsp\link.cmd"
+"C:\Program Files\SEED\SEED_HPS6455\test_hps6455\dsp_fpga_srio\srio_dsp\Debug\main.obj"
+"C:\Program Files\SEED\SEED_HPS6455\test_hps6455\dsp_fpga_srio\srio_dsp\Debug\vectors.obj"

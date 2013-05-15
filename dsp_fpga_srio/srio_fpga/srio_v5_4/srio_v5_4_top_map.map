@@ -1,0 +1,361 @@
+Release 11.3 Map L.57 (nt)
+Xilinx Map Application Log File for Design 'srio_v5_4_top'
+
+Design Information
+------------------
+Command Line   : map -ise srio_v5_4_ise_prj.ise -intstyle ise -p
+xc5vsx50t-ff1136-1 -w -logic_opt off -ol std -t 1 -register_duplication off
+-global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o
+srio_v5_4_top_map.ncd srio_v5_4_top.ngd srio_v5_4_top.pcf 
+Target Device  : xc5vsx50t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.51.18.1 $
+Mapped Date    : Wed Jun 02 12:39:57 2010
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+INFO:Security:56 - Part 'xc5vsx50t' is not a WebPack part.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current
+version of Xilinx tools will continue to function, but you no longer qualify for
+Xilinx software updates or new releases.
+----------------------------------------------------------------------
+WARNING:LIT:243 - Logical network ireq_addr<31> has no load.
+WARNING:LIT:395 - The above warning message is repeated 187 more times for the
+   following (max. 5 shown):
+   ireq_addr<32>,
+   ireq_addr<33>,
+   rio_de_wrapper/reg_manager/mgt_a<0>,
+   rio_de_wrapper/reg_manager/mgt_a<1>,
+   rio_de_wrapper/reg_manager/mgt_a<10>
+   To see the details of these warning messages, please use the -detail switch.
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal test connected to top level port test has been
+   removed.
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/rx_buffer_inst/rx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[0].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKAL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBU connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP
+   of frag REGCLKBL connected to power/ground net
+   rio_de_wrapper/buffer_sim/U0/buffer_top_inst/tx_buffer_inst/tx_bram_bank_inst
+   /blk_mem_inst/blk_mem_generator/valid.cstr/ramloop[1].ram.r/v5_noinit.ram/SDP
+   .SINGLE_PRIM36.TDP_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_lower
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_lower_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/initiator_bram/iram_upper
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/initiator_bram/iram_upper_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKAU connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKAU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKAL connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKAL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKBU connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKBU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/initiator_user/tid_bram/rram
+   of frag REGCLKBL connected to power/ground net
+   user_top/initiator_user/tid_bram/rram_REGCLKBL_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/target_user/ram
+   of frag RDRCLKU connected to power/ground net
+   user_top/target_user/ram_RDRCLKU_tiesig
+WARNING:Pack:2874 - Trimming timing constraints from pin
+   user_top/target_user/ram
+   of frag RDRCLKL connected to power/ground net
+   user_top/target_user/ram_RDRCLKL_tiesig
+Running directed packing...
+WARNING:Pack:2515 - The LUT-1 inverter
+   "rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_mgt_top/LN
+   K_PORTERR_N1_INV_0" failed to join the OLOGIC comp matched to output buffer
+   "led0_1_OBUF".  This may result in suboptimal timing.  The LUT-1 inverter
+   rio_de_wrapper/phy_wrapper/phy_1x_ser/U0/phy_1x_ser_gen.phy_ser/u_mgt_top/LNK
+   _PORTERR_N1_INV_0 drives multiple loads.
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 1 mins 20 secs 
+Total CPU  time at the beginning of Placer: 1 mins 12 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:16cfd76f) REAL time: 1 mins 36 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:16cfd76f) REAL time: 1 mins 37 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:16cfd76f) REAL time: 1 mins 37 secs 
+
+Phase 4.37  Local Placement Optimization
+Phase 4.37  Local Placement Optimization (Checksum:16cfd76f) REAL time: 1 mins 37 secs 
+
+Phase 5.2  Initial Clock and IO Placement
+
+Phase 5.2  Initial Clock and IO Placement (Checksum:c31c724b) REAL time: 2 mins 53 secs 
+
+Phase 6.36  Local Placement Optimization
+Phase 6.36  Local Placement Optimization (Checksum:c31c724b) REAL time: 2 mins 53 secs 
+
+Phase 7.30  Global Clock Region Assignment
+Phase 7.30  Global Clock Region Assignment (Checksum:c31c724b) REAL time: 2 mins 53 secs 
+
+Phase 8.3  Local Placement Optimization
+Phase 8.3  Local Placement Optimization (Checksum:c31c724b) REAL time: 2 mins 54 secs 
+
+Phase 9.5  Local Placement Optimization
+Phase 9.5  Local Placement Optimization (Checksum:c31c724b) REAL time: 2 mins 55 secs 
+
+Phase 10.8  Global Placement
+...................................
+............................................................................................................
+Phase 10.8  Global Placement (Checksum:ffd5695b) REAL time: 3 mins 35 secs 
+
+Phase 11.29  Local Placement Optimization
+Phase 11.29  Local Placement Optimization (Checksum:ffd5695b) REAL time: 3 mins 35 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:ffd5695b) REAL time: 3 mins 36 secs 
+
+Phase 13.18  Placement Optimization
+Phase 13.18  Placement Optimization (Checksum:20d6d8d7) REAL time: 4 mins 5 secs 
+
+Phase 14.5  Local Placement Optimization
+Phase 14.5  Local Placement Optimization (Checksum:20d6d8d7) REAL time: 4 mins 7 secs 
+
+Phase 15.34  Placement Validation
+Phase 15.34  Placement Validation (Checksum:20d6d8d7) REAL time: 4 mins 8 secs 
+
+Total REAL time to Placer completion: 4 mins 10 secs 
+Total CPU  time to Placer completion: 3 mins 56 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:1841 - One or more GTPs are being used in this design.
+   Evaluate the SelectIO-To-GTP Crosstalk section of the Virtex-5 RocketIO GTP
+   Transceiver User Guide to ensure that the design SelectIO usage meets the
+   guidelines to minimize the impact on GTP performance. 
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   35
+Slice Logic Utilization:
+  Number of Slice Registers:                 6,524 out of  32,640   19%
+    Number used as Flip Flops:               6,524
+  Number of Slice LUTs:                      6,394 out of  32,640   19%
+    Number used as logic:                    6,094 out of  32,640   18%
+      Number using O6 output only:           5,889
+      Number using O5 output only:              94
+      Number using O5 and O6:                  111
+    Number used as Memory:                     223 out of  12,480    1%
+      Number used as Dual Port RAM:            214
+        Number using O6 output only:             8
+        Number using O5 output only:             7
+        Number using O5 and O6:                199
+      Number used as Shift Register:             9
+        Number using O6 output only:             9
+    Number used as exclusive route-thru:        77
+  Number of route-thrus:                       174
+    Number using O6 output only:               170
+    Number using O5 output only:                 3
+    Number using O5 and O6:                      1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 2,641 out of   8,160   32%
+  Number of LUT Flip Flop pairs used:        8,830
+    Number with an unused Flip Flop:         2,306 out of   8,830   26%
+    Number with an unused LUT:               2,436 out of   8,830   27%
+    Number of fully used LUT-FF pairs:       4,088 out of   8,830   46%
+    Number of unique control sets:             258
+    Number of slice register sites lost
+      to control set restrictions:             470 out of  32,640    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                         7 out of     480    1%
+    Number of LOCed IOBs:                        7 out of       7  100%
+    Number of bonded IPADs:                      4 out of      38   10%
+    Number of bonded OPADs:                      2 out of      24    8%
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       8 out of     132    6%
+    Number using BlockRAM only:                  8
+    Total primitives used:
+      Number of 36k BlockRAM used:               8
+    Total Memory used (KB):                    288 out of   4,752    6%
+  Number of BUFG/BUFGCTRLs:                      4 out of      32   12%
+    Number used as BUFGs:                        4
+  Number of BUFDSs:                              1 out of       6   16%
+  Number of GTP_DUALs:                           1 out of       6   16%
+    Number of LOCed GTP_DUALs:                   1 out of       1  100%
+  Number of PLL_ADVs:                            1 out of       6   16%
+
+Average Fanout of Non-Clock Nets:                4.22
+
+Peak Memory Usage:  470 MB
+Total REAL time to MAP completion:  4 mins 41 secs 
+Total CPU time to MAP completion:   4 mins 22 secs 
+
+Mapping completed.
+See MAP report file "srio_v5_4_top_map.mrp" for details.

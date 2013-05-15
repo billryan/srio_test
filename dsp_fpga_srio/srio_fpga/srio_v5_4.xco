@@ -1,0 +1,119 @@
+##############################################################
+#
+# Xilinx Core Generator version 11.3
+# Date: Thu Apr 29 07:53:48 2010
+#
+##############################################################
+#
+#  This file contains the customisation parameters for a
+#  Xilinx CORE Generator IP GUI. It is strongly recommended
+#  that you do not manually alter this file as it may cause
+#  unexpected and unsupported behavior.
+#
+##############################################################
+#
+# BEGIN Project Options
+SET addpads = False
+SET asysymbol = True
+SET busformat = BusFormatAngleBracketNotRipped
+SET createndf = False
+SET designentry = Advanced
+SET device = xc5vsx50t
+SET devicefamily = virtex5
+SET flowvendor = Foundation_ISE
+SET formalverification = False
+SET foundationsym = False
+SET implementationfiletype = Ngc
+SET package = ff1136
+SET removerpms = False
+SET simulationfiles = Structural
+SET speedgrade = -1
+SET verilogsim = True
+SET vhdlsim = False
+# END Project Options
+# BEGIN Select
+SELECT Serial_RapidIO family Xilinx,_Inc. 5.4
+# END Select
+# BEGIN Parameters
+CSET additional_link_requests_before_fatal=4
+CSET assembly_identifier=0000
+CSET assembly_revision_level=0000
+CSET assembly_vendor_identifier=0000
+CSET atomic_clear=true
+CSET atomic_compare_and_swap=true
+CSET atomic_decrement=true
+CSET atomic_increment=true
+CSET atomic_set=true
+CSET atomic_swap=true
+CSET atomic_test_and_swap=true
+CSET component_device_id=AB
+CSET component_name=srio_v5_4
+CSET crf0_0=false
+CSET crf0_1=false
+CSET crf0_2=false
+CSET crf0_3=false
+CSET crf1_0=false
+CSET crf1_1=false
+CSET crf1_2=false
+CSET crf1_3=false
+CSET csr_port_map=0
+CSET destination_atomic_clear=true
+CSET destination_atomic_compare_and_swap=true
+CSET destination_atomic_decrement=true
+CSET destination_atomic_increment=true
+CSET destination_atomic_set=true
+CSET destination_atomic_swap=true
+CSET destination_atomic_test_and_swap=true
+CSET destination_supported_source_data_message=true
+CSET destination_supported_source_doorbell=true
+CSET destination_supported_source_port_write=false
+CSET destination_supported_source_read=true
+CSET destination_supported_source_streaming_write=true
+CSET destination_supported_source_write=true
+CSET destination_supported_source_write_with_response=true
+CSET discovered=false
+CSET enable_doorbell_and_message_packets_support=true
+CSET enable_endpoint_example_generation=true
+CSET enable_logical_layer_generation=true
+CSET enable_srio_ph_generation=true
+CSET engineering_samples=false
+CSET error_checking_disable=false
+CSET extended_features_id=0001
+CSET extended_features_pointer=0000
+CSET flow_control=Transmitter_Controlled
+CSET generation_target_status="The Endpoint Example requires Physical and/or Logical layer names to be valid."
+CSET highest_priority_watermark=1
+CSET host=false
+CSET input_clock_frequency=156.25
+CSET input_port_enable=true
+CSET lanes_selection=x1
+CSET lcsba=7FE00000
+CSET link_timeout_interval=FFFFFF
+CSET logical_layer_name=rio_log_io_v5_4
+CSET master_enable=false
+CSET medium_priority_watermark=2
+CSET multicast_event_participant=true
+CSET output_port_enable=true
+CSET port_disable=false
+CSET port_width_override=No_Override
+CSET processing_element_features=Memory
+CSET response_timeout_interval=FFFFFF
+CSET rx_buffer_depth=16
+CSET select_width_for_supported_device_ids=Use_8_bit_Device_IDs
+CSET serial_physical_layer_name=srio_phy_v5_4
+CSET smallest_priority_watermark=3
+CSET support_critical_request_flow=true
+CSET supported_source_data_message=true
+CSET supported_source_doorbell=true
+CSET supported_source_port_write=false
+CSET supported_source_read=true
+CSET supported_source_streaming_write=true
+CSET supported_source_write=true
+CSET supported_source_write_with_response=true
+CSET transfer_frequency=3.125
+CSET tx_buffer_depth=16
+CSET unified_clock=false
+CSET user_reference_clock=REFCLK1
+# END Parameters
+GENERATE
+# CRC: 69b5dbb8

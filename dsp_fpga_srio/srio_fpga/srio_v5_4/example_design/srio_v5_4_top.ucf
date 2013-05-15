@@ -1,0 +1,93 @@
+###############################################################################
+#
+# File:   srio_v5_4_top.ucf
+# Rev:    5.4
+#
+# Use this file only with the device listed below.  Any other
+# combination is invalid.  Do not modify this file except in
+# regions designated for "User" constraints. It is targeted
+# specifically to the ML523 board to enable hardware demonstration
+# of the RapidIO Endpoint.
+#
+# Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+#
+################################################################################
+# Define Device, Package And Speed Grade
+################################################################################
+#
+CONFIG PART = XC5VSX50T-FF1136-1 ;
+#
+################################################################################
+# User Time Names / User Time Groups
+################################################################################
+#
+# Note:  Change the instance name for the user application to match the
+# instance name in your custom design.
+#
+#
+#
+# You may add further time names and time groups specific to your custom
+# design as long as the do not interfere with the timegroups and time
+# specs used for the interface.
+#
+################################################################################
+# User Time Specs
+################################################################################
+#
+#
+################################################################################
+# User Constraints (Pinout, Placement, Etc.)
+################################################################################
+#
+#
+# Local Reset driven from SW7
+NET "local_reset"   	LOC = "AA28" | PULLUP;
+
+# Link Reset driven from SW8
+NET "link_reset"   	LOC = "V8" | PULLUP;
+
+# LED Rows for Debug and Status
+# Top LED column
+NET "led0[4]" IOSTANDARD = LVCMOS25 | LOC = "W26";
+NET "led0[3]" IOSTANDARD = LVCMOS25 | LOC = "V25";
+NET "led0[2]" IOSTANDARD = LVCMOS25 | LOC = "W25";
+NET "led0[1]" IOSTANDARD = LVCMOS25 | LOC = "Y26";
+NET "led0[0]" IOSTANDARD = LVCMOS25 | LOC = "V24";
+
+NET "test"     LOC = "C33" ;  
+################################################################################
+# GTP Transceiver and REFCLK Placement
+################################################################################
+#
+
+# Lock down placement of GTP Transceiver to example GTP placement
+INST "rio_de_wrapper/phy_wrapper/srio_gt_wrapper/gtp_wrapper/tile0_gtp_wrapper_i/gtp_dual_i" LOC = "GTP_DUAL_X0Y3";	# MGT112
+
+# Lock down placement of REFCLK to correlate with example GTP location
+NET "sys_clkp"     LOC = "P4" ;    # MGT112
+NET "sys_clkn"     LOC = "P3" ;    # MGT112
+
+#
+################################################################################
+# Core I/O Standard
+################################################################################
+#
+INST "phy_1x_ser_clk/u_refclk_ibufds" IOSTANDARD = LVDS_25;
+#
+################################################################################
+# Core Time Specs
+################################################################################
+#
+NET "phy_1x_ser_clk/UCLK_BUF"      TNM_NET = "UCLK";
+NET "phy_1x_ser_clk/UCLK2_BUF"     TNM_NET = "UCLK2";
+NET "phy_1x_ser_clk/UCLK_DV4_BUF"  TNM_NET = "UCLK_DV4";
+
+# For GTP operation at 3.125 GHz
+TIMESPEC "TS_UCLK2"    = PERIOD "UCLK2"  3.2 ns HIGH 50 %  INPUT_JITTER 100 ps PRIORITY 0;
+TIMESPEC "TS_UCLK"     = PERIOD "UCLK"  "TS_UCLK2" * 2 HIGH 50 % INPUT_JITTER 100 ps PRIORITY 1;
+TIMESPEC "TS_UCLK_DV4" = PERIOD "UCLK_DV4"  "TS_UCLK" * 4 HIGH 50 % INPUT_JITTER 100 ps PRIORITY 1;
+#
+
+################################################################################
+# End
+################################################################################

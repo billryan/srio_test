@@ -1,0 +1,14 @@
+# Output products list for <srio_icon>
+_xmsgs\
+srio_icon.asy
+srio_icon.gise
+srio_icon.ise
+srio_icon.ngc
+srio_icon.v
+srio_icon.veo
+srio_icon.xco
+srio_icon.xise
+srio_icon_flist.txt
+srio_icon_readme.txt
+srio_icon_xdb\tmp\
+srio_icon_xmdf.tcl

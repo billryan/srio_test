@@ -1,0 +1,11 @@
+run
+-ifmt MIXED
+-top srio_v5_4_top
+-p xc5vlx50t-ff1136-1
+-ifn xst.prj
+-ofn srio_v5_4_top
+-keep_hierarchy soft 
+-equivalent_register_removal no 
+-max_fanout 65535
+-opt_mode speed
+-opt_level 1

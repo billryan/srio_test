@@ -1,0 +1,230 @@
+#include "macro.h"
+#include "stdio.h"
+
+int init_6455();
+void SRIO_init();
+int  n=0, begin_process=0, pingORpong=0;
+int	 result[FFT_N];
+
+main()
+{
+    init_6455();                             //initialize C6455
+	while(1)
+	{	 
+
+	}
+}
+
+
+
+int init_6455()                                                              //initialize C6455
+{
+    int i;
+    int PLLM_val =    20;  /* CLKIN1 = 50MHz */
+    int PREDIV_val =  1;
+    int PLLDIV4_val = 8;
+    int PLLDIV5_val = 4;
+
+	CSR &=~(0x1);	//turn off interruput
+
+			/* In PLLCTL, write PLLENSRC = 0 (enable PLLEN bit).*/
+	PLLCTL_1 &= ~(0x00000020);
+			/* In PLLCTL, write PLLEN = 0 (bypass mode).*/
+	PLLCTL_1 &= ~(0x00000001);
+			/* Wait 4 cycles of the slowest of PLLOUT or reference clock source (CLKIN).*/
+	for (i=0 ; i<100 ; i++);
+			/*In PLLCTL, write PLLRST = 1 (PLL is reset).*/
+	PLLCTL_1 |= 0x00000008;
+			/*If necessary, program PREDIV and PLLM.*/
+	PLLM_1 = PLLM_val - 1;
+	PREDIV_1 = (PREDIV_val - 1) | 0x8000;	/* set PLLDIV0 */
+			
+			/*If necessary, program PLLDIV1n. Note that you must apply the GO operation
+				to change these dividers to new ratios.*/
+
+				/* Check that the GOSTAT bit in PLLSTAT is cleared to show that no GO 
+					operation is currently in progress.*/
+	while( (PLLSTAT_1) & 0x00000001);
+
+
+				/* Program the RATIO field in PLLDIVn to the desired new divide-down rate. 
+					If the RATIO field changed, the PLL controller will flag the change
+					in the corresponding bit of DCHANGE.*/
+	PLLDIV4_1 = (PLLDIV4_val - 1) | 0x8000;	/* set PLLDIV4 */
+	PLLDIV5_1 = (PLLDIV5_val - 1) | 0x8000;	/* set PLLDIV5 */
+
+				/* Set the GOSET bit in PLLCMD to initiate the GO operation to change
+					the divide values and align the SYSCLKs as programmed.*/
+	PLLCMD_1 |= 0x00000001;
+
+				/* Read the GOSTAT bit in PLLSTAT to make sure the bit returns to 0
+					to indicate that the GO operation has completed.*/
+	while( (PLLSTAT_1) & 0x00000001);
+
+			/* Wait for PLL to properly reset.(128 CLKIN1 cycles).*/
+	for (i=0 ; i<1000 ; i++);
+
+			/* In PLLCTL, write PLLRST = 0 to bring PLL out of reset.*/
+	PLLCTL_1 &= ~(0x00000008);
+
+			/* Wait for PLL to lock (2000 CLKIN1 cycles). */
+	for (i=0 ; i<4000 ; i++);
+
+			/* In PLLCTL, write PLLEN = 1 to enable PLL mode. */
+	PLLCTL_1 |= (0x00000001);
+
+	ISTP = 0x00900000;	//interruput vector table location
+	INTMUX1 = 0x18; 	//*INTMUX1[6:0]=011000	INT4 map to edma3cc_gint*/
+	IER = 0x0013;	/*enable interrupt: reset, NMI,INT4*/
+	PERLOCK = 0x0f0a0b00; /* Unlock PERCFG0 through PERLOCK */
+	PERCFG0 = 0xC0015555; /* Enable EMAC, Timers, McBSPs, I2C, GPIO in PERCFG0 */
+	PERCFG1 = 0x3; /* Enable DDR and EMIFA in PERCFG1 */
+	GP_BINTEN |= 0x1 ;	//enable gpio as souce of interruput
+	GP_SET_RIS_TRIG |= 0x1 ;	//the rising edge of gpio trige the interruput or event 	
+	EMIFA_CONFIGREG_STAT &= ~(0x80000000) ;	//config emifa work in little endian mode 
+	EMIFA_CONFIGREG_CE4CFG |= 0x8000010b ;	//emifa works in sysnc mode; read letance =2; 32bits wide
+	
+
+	SRIO_init();
+
+	CSR	|=	0x1;	//enable intertuput
+
+	return(1);
+}
+
+
+
+
+void SRIO_init()                    //initialize C6455 SRIO
+{
+int srio4p1x_mode=0, rdata=0, wdata=0, mask=0, 
+/* Glb enable srio */
+SRIO_GBL_EN = 0x00000001 ;
+SRIO_BLK0_EN = 0x00000001 ; //MMR_EN
+SRIO_BLK5_EN = 0x00000001 ; //PORT0_EN
+SRIO_BLK1_EN = 0x00000001 ; //LSU_EN
+SRIO_BLK2_EN = 0x00000001 ; //MAU_EN
+SRIO_BLK3_EN = 0x00000001 ; //TXU_EN
+SRIO_BLK4_EN = 0x00000001 ; //RXU_EN
+SRIO_BLK6_EN = 0x00000001 ; //PORT1_EN
+SRIO_BLK7_EN = 0x00000001 ; //PORT2_EN
+SRIO_BLK8_EN = 0x00000001 ; //PORT3_EN
+if (srio4p1x_mode){
+rdata = SRIO_PER_SET_CNTL;
+wdata = 0x0000014F; //4p1x
+mask = 0x000001FF;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_PER_SET_CNTL = mdata ; // enable PLL
+}
+else{
+wdata = 0x0000004F; // enable PLL, 1p4x
+rdata = SRIO_PER_SET_CNTL;
+mask = 0x000001FF;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_PER_SET_CNTL = mdata ; // enable PLL, 1p1x/4x
+}
+//INIT_MAC0
+if (srio4p1x_mode){
+SRIO_SP_IP_MODE = 0x4400003F; // mltc/rst/pw enable, clear
+}
+else{
+SRIO_SP_IP_MODE = 0x0400003F; // mltc/rst/pw enable, clear
+}
+SRIO_SERDES_CFG0_CNTL = 0x00000013;
+SRIO_SERDES_CFG1_CNTL = 0x00000000;
+SRIO_SERDES_CFG2_CNTL = 0x00000000;
+SRIO_SERDES_CFG3_CNTL = 0x00000000;
+SRIO_SERDES_CFGRX0_CNTL = 0x00081121 ; // enable rx, half rate
+SRIO_SERDES_CFGRX1_CNTL = 0x00081121 ; // enable rx, half rate
+SRIO_SERDES_CFGRX2_CNTL = 0x00081121 ; // enable rx, half rate
+SRIO_SERDES_CFGRX3_CNTL = 0x00081121 ; // enable rx, half rate
+SRIO_SERDES_CFGTX0_CNTL = 0x00010821 ; // enable tx, half rate
+SRIO_SERDES_CFGTX1_CNTL = 0x00010821 ; // enable tx, half rate
+SRIO_SERDES_CFGTX2_CNTL = 0x00010821 ; // enable tx, half rate
+SRIO_SERDES_CFGTX3_CNTL = 0x00010821 ; // enable tx, half rate
+rdata = SRIO_DEVICEID_REG1;
+wdata = 0x00ABBEEF;
+mask = 0x00FFFFFF;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_DEVICEID_REG1 = mdata ; // id-16b=BEEF, id-08b=AB
+rdata = SRIO_DEVICEID_REG2;
+wdata = 0x00ABBEEF;
+mask = 0x00FFFFFF;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_DEVICEID_REG2 = mdata ; // id-16b=BEEF, id-08b=AB
+rdata = SRIO_PER_SET_CNTL;
+data = 0x00000000;
+mask = 0x01000000;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_PER_SET_CNTL = mdata; // bootcmpl=0
+SRIO_DEV_ID = 0xBEEF0030 ; // id=BEEF, ti=0x0030
+SRIO_DEV_INFO = 0x00000000 ; // 0
+SRIO_ASBLY_ID = 0x00000030 ; // ti=0x0030
+SRIO_ASBLY_INFO = 0x00000000; // 0x0000, next ext=0x0100
+SRIO_PE_FEAT = 0x20000019 ; // proc, bu ext, 16-bit ID, 34-bit addr
+SRIO_SRC_OP = 0x0000FDF4; // all
+SRIO_DEST_OP = 0x0000FC04; // all except atomic
+SRIO_PE_LL_CTL = 0x00000001; // 34-bit addr
+SRIO_LCL_CFG_HBAR = 0x00000000 ; // 0
+SRIO_LCL_CFG_BAR = 0x00000000; // 0
+SRIO_BASE_ID = 0x00ABBEEF; // 16b-id=BEEF, 08b-id=AB
+SRIO_HOST_BASE_ID_LOCK = 0x0000BEEF; // id=BEEF, lock
+SRIO_COMP_TAG = 0x00000000; // not touched
+SRIO_SP_IP_DISCOVERY_TIMER = 0x90000000;// 0, short cycles for sim
+SRIO_IP_PRESCAL = 0x00000021; // srv_clk prescalar=0x21 (333MHz)
+SRIO_SP0_SILENCE_TIMER = 0x20000000;
+SRIO_SP1_SILENCE_TIMER = 0x20000000;
+SRIO_SP2_SILENCE_TIMER = 0x20000000;
+SRIO_SP3_SILENCE_TIMER = 0x20000000;
+rdata = SRIO_PER_SET_CNTL;
+wdata = 0x01000000;
+mask = 0x01000000;
+mdata = (wdata & mask) | (rdata & ~mask);
+SRIO_PER_SET_CNTL = mdata; // bootcmpl=1
+RIO_REGS->SP_LT_CTL = 0xFFFFFF00; // long
+SRIO_SP_RT_CTL = 0xFFFFFF00; // long
+SRIO_SP_GEN_CTL = 0x40000000; // agent, master, undiscovered
+SRIO_SP0_CTL = 0x00600000; // enable i/o
+SRIO_SP1_CTL = 0x00600000; // enable i/o
+SRIO_SP2_CTL = 0x00600000; // enable i/o
+SRIO_SP3_CTL = 0x00600000; // enable i/o
+SRIO_ERR_DET = 0x00000000 ; // clear
+SRIO_ERR_EN = 0x00000000 ; // disable
+SRIO_H_ADDR_CAPT = 0x00000000 ; // clear
+SRIO_ADDR_CAPT = 0x00000000 ; // clear
+SRIO_ID_CAPT = 0x00000000 ; // clear
+SRIO_CTRL_CAPT = 0x00000000 ; // clear
+SRIO_SP_IP_PW_IN_CAPT0 = 0x00000000 ; // clear
+SRIO_SP_IP_PW_IN_CAPT1 = 0x00000000 ; // clear
+SRIO_SP_IP_PW_IN_CAPT2 = 0x00000000 ; // clear
+SRIO_SP_IP_PW_IN_CAPT3 = 0x00000000 ; // clear
+//INIT_WAIT wait for lane initialization
+// polling SRIO_MAC's port_ok bit
+rdata = SRIO_P0_ERR_STAT ;
+while ((rdata & 0x00000002) != 0x00000002)
+{
+rdata = SRIO_P0_ERR_STAT ;
+}
+if (srio4p1x_mode){
+rdata = SRIO_P1_ERR_STAT;
+while ((rdata & 0x00000002) != 0x00000002)
+{
+rdata = SRIO_P1_ERR_STAT;
+}
+rdata = SRIO_P2_ERR_STAT;
+while ((rdata & 0x00000002) != 0x00000002)
+{
+rdata = SRIO_P2_ERR_STAT;
+}
+rdata = SRIO_P3_ERR_STAT;
+while ((rdata & 0x00000002) != 0x00000002)
+{
+rdata = SRIO_P3_ERR_STAT;
+}
+}
+SRIO_PCR = 0x00000004; // peren
+
+
+}
+
+	   

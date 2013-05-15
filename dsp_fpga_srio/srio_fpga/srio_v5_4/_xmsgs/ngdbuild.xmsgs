@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;srio_phy&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/01/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;srio_phy&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/01/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;rio_log_io&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/02/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;srio_phy&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/01/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;srio_phy&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/01/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="info" file="coreutil" num="0" delta="unknown" ><arg fmt="%s" index="1">Hardware Evaluation license for component &lt;rio_log_io&gt; found. The generated design will cease to function in the programmed device after operating for some period of time. This allows you to evaluate the component in hardware. You are encouraged to license this component.
+
+The license for this core was generated for wulianluck@seeddsp.com on 06/02/2010It is the responsibility of the Licensee of this core to adhere to all terms and conditions of the applicable license agreement when using this core.
+
+For ordering information, please refer to the product page for this component on: www.xilinx.com</arg>
+</msg>
+
+<msg type="warning" file="NgdBuild" num="1012" delta="unknown" >The constraint <arg fmt="%s" index="1">&lt;INST: UniqueName: /srio_v5_4_top/EXPANDED/srio_v5_4_top/phy_1x_ser_clk\/u_refclk_ibufds IOSTANDARD = &quot;DEFAULT&quot;&gt;</arg> is overridden on the design object <arg fmt="%s" index="2">phy_1x_ser_clk/u_refclk_ibufds</arg> by the constraint <arg fmt="%s" index="3">&lt;INST &quot;phy_1x_ser_clk/u_refclk_ibufds&quot; IOSTANDARD = LVDS_25;&gt; [example_design/srio_v5_4_top.ucf(75)]</arg>.
+</msg>
+
+<msg type="warning" file="NgdBuild" num="486" delta="unknown" >Attribute &quot;<arg fmt="%s" index="1">CLK_FEEDBACK</arg>&quot; is not allowed on symbol &quot;<arg fmt="%s" index="2">phy_1x_ser_clk/u_rio_sercore_pll</arg>&quot; of type &quot;<arg fmt="%s" index="3">PLL_ADV</arg>&quot;.  This attribute will be ignored.
+</msg>
+
+</messages>
+

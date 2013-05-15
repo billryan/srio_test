@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<document OS="nt" product="ISE" version="11.3">
+
+  <!--The data in this file is primarily intended for consumption by Xilinx tools.
+    The structure and the elements are likely to change over the next few releases.
+    This means code written to parse this file will need to be revisited each subsequent release.-->
+
+  <application stringID="NgdBuild" timeStamp="Wed Jun 02 12:39:47 2010">
+    <section stringID="User_Env">
+      <table stringID="User_EnvVar">
+        <column stringID="variable"/>
+        <column stringID="value"/>
+        <row stringID="row" value="0">
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="C:\Xilinx\11.1\ISE"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="variable" value="XILINXD_LICENSE_FILE"/>
+          <item stringID="value" value="E:\worksoft\xilinx\LICENSE.TXT"/>
+        </row>
+        <row stringID="row" value="2">
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="C:\Xilinx\11.1\DSP_Tools\nt"/>
+        </row>
+        <row stringID="row" value="3">
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="C:\Xilinx\11.1\EDK"/>
+        </row>
+        <row stringID="row" value="4">
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="C:\Xilinx\11.1\PlanAhead"/>
+        </row>
+      </table>
+      <item stringID="User_EnvOs" value="OS Information">
+        <item stringID="User_EnvOsname" value="Microsoft Windows XP Professional"/>
+        <item stringID="User_EnvOsrelease" value="Service Pack 3  (build 2600)"/>
+      </item>
+      <item stringID="User_EnvHost" value="seed-luckw"/>
+      <table stringID="User_EnvCpu">
+        <column stringID="arch"/>
+        <column stringID="speed"/>
+        <row stringID="row" value="0">
+          <item stringID="arch" value="Intel(R) Core(TM)2 Duo CPU     T6670  @ 2.20GHz"/>
+          <item stringID="speed" value="2194 MHz"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="arch" value="Intel(R) Core(TM)2 Duo CPU     T6670  @ 2.20GHz"/>
+          <item stringID="speed" value="2194 MHz"/>
+        </row>
+      </table>
+    </section>
+    <task stringID="NGDBUILD_REPORT">
+      <section stringID="NGDBUILD_DESIGN_SUMMARY">
+        <item dataType="int" stringID="NGDBUILD_NUM_ERRORS" value="0"/>
+        <item dataType="int" stringID="NGDBUILD_FILTERED_WARNINGS" value="0"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_WARNINGS" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_FILTERED_INFOS" value="0"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INFOS" value="6"/>
+      </section>
+      <section stringID="NGDBUILD_CORE_SUMMARY">
+        <item COUNT="1" stringID="NGDBUILD_CORE" value="gtpwizard_v1_9, Coregen v10.1_ip2"/>
+        <section stringID="NGDBUILD_CORE_GENERATION_SUMMARY">
+          <section stringID="NGDBUILD_CORE_INSTANCES">
+            <scope stringID="NGDBUILD_CORE_INSTANCE" value="fifo_16x190">
+              <item stringID="NGDBUILD_CORE_INFO" type="fifo_generator_v5_3" value="fifo_16x190"/>
+              <item c_common_clock="0" c_data_count_width="4" c_din_width="190" c_dout_rst_val="0" c_dout_width="190" c_enable_rst_sync="1" c_error_injection_type="0" c_full_flags_rst_val="0" c_has_almost_empty="0" c_has_almost_full="1" c_has_data_count="0" c_has_int_clk="0" c_has_overflow="0" c_has_rd_data_count="0" c_has_rst="1" c_has_srst="0" c_has_underflow="0" c_has_valid="0" c_has_wr_ack="0" c_has_wr_data_count="0" c_implementation_type="2" c_memory_type="2" c_msgon_val="1" c_overflow_low="0" c_preload_latency="0" c_preload_regs="1" c_prim_fifo_type="512x72" c_prog_empty_thresh_assert_val="4" c_prog_empty_thresh_negate_val="5" c_prog_empty_type="0" c_prog_full_thresh_assert_val="15" c_prog_full_thresh_negate_val="14" c_prog_full_type="0" c_rd_data_count_width="4" c_rd_depth="16" c_rd_freq="1" c_rd_pntr_width="4" c_underflow_low="0" c_use_dout_rst="1" c_use_ecc="0" c_use_embedded_reg="0" c_use_fwft_data_count="0" c_valid_low="0" c_wr_ack_low="0" c_wr_data_count_width="4" c_wr_depth="16" c_wr_freq="1" c_wr_pntr_width="4" component_name="fifo_16x190" stringID="NGDBUILD_CORE_PARAMETERS" value="fifo_16x190"/>
+            </scope>
+            <scope stringID="NGDBUILD_CORE_INSTANCE" value="srio_v5_4">
+              <item stringID="NGDBUILD_CORE_INFO" type="srio_v5_4" value="srio_v5_4"/>
+              <item c_16bit_devid="0" c_4_lane_core="0" c_ass_id="0000" c_ass_rev="0000" c_ass_vid="0000" c_core_is_host="0" c_crf_support="1" c_csr_port_map="0" c_db_msg="1" c_dev_id="AB" c_device="0" c_discovered="0" c_dst_atom="1111111" c_dst_std="1111110" c_ef_id="0001" c_ef_pointer="0000" c_eng_samples="0" c_err_disable="0" c_ext_addr="001" c_ext_addr_ctrl="001" c_family="virtex5" c_input_port_enable="1" c_lcsba="7FE00000" c_link_requests="100" c_link_timeout="FFFFFF" c_maint_port="1" c_master="0" c_mce_participant="1" c_mode_xg="100" c_output_port_enable="1" c_pef_car="0100" c_port_disable="0" c_port_width_override="000" c_refclk_freq="2" c_refclksel="0" c_resp_timeout="FFFFFF" c_rts_mask="00000000" c_rx_depth="16" c_src_atom="1111111" c_src_std="1111110" c_srio_phy_name="srio_phy_v5_4" c_sw_ext_rt="0" c_sw_max_dest_id="0000" c_sw_port_num="00" c_sw_ports="01" c_sw_std_rt="1" c_tx_depth="16" c_tx_flow_control="1" c_unified_clock="0" c_water_mark_0="3" c_water_mark_1="2" c_water_mark_2="1" component_name="srio_v5_4" stringID="NGDBUILD_CORE_PARAMETERS" value="srio_v5_4"/>
+            </scope>
+          </section>
+        </section>
+      </section>
+    </task>
+  </application>
+
+</document>
