@@ -1,0 +1,7 @@
+## 12/26/12 11:37:54
+Attempt to create Code Composer Studio...
+CCS created OK.
+Req. FBTC Load.
+FBTC Download OK.
+Failed to get BP addr
+Cannot load FBTC Program

@@ -1,0 +1,10 @@
+-----------------------------  srio_a.pjt - Debug  -----------------------------
+[main.c] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -pdsw225 -fr"D:/Documents/MyProjects/srio_dsp/Debug" -d"_DEBUG" -mv6400 -@"Debug.lkf" "main.c"
+
+[vectors.asm] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -g -pdsw225 -fr"D:/Documents/MyProjects/srio_dsp/Debug" -d"_DEBUG" -mv6400 -@"Debug.lkf" "vectors.asm"
+
+[Linking...] "C:\CCStudio_v3.3\C6000\cgtools\bin\cl6x" -@"Debug.lkf"
+<Linking>
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.
