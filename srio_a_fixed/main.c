@@ -1,5 +1,8 @@
 #include "macro.h"
 #include <stdio.h>
+#include <time.h>
+
+unsigned int time_start, time_stop, nread_overhead, nwrite_overhead, time_overhead, cycles;
 
 int init_6455();
 void SRIO_init();
@@ -8,6 +11,8 @@ void srio_write();
 
 main() {
 	int i, j, k, n;
+	unsigned int srio_testlen;
+	unsigned int srio_byte_len[] = {8,16,32,64,128,192,256,384,512,768,1024,2048,3072,4096};
 	int* pBUF = (int*) SRIO_WRITEBUF;
 
 	init_6455(); //initialize C6455
@@ -16,29 +21,27 @@ main() {
 	memset((void *) SRIO_READBUF, 0, SRIO_BUF_SIZE); // Clear memory
 
 	i = SRIO_TESTTIMES;
-	printf(
-			"Run %d times to analyze the SRIO transfer...... \nplease wait......\n",
-			i);
+	printf("Run %d times to analyze the SRIO transfer...... \nplease wait......\n", i);
+
 	// run 1000 times  to analyze the SRIO transfer
 	for (i = 0; i < SRIO_TESTTIMES; i++) {
 		for (j = 0, pBUF = (int*) SRIO_WRITEBUF; j < SRIO_TESTLEN;
 				j++, *(pBUF++) = ((j + i) + ((j + i) << 16)))
 			;
-
-		srio_write(SRIO_WRITEBUF, SRIO_TARGETBUF_ADDR, SRIO_TESTLEN);
+		srio_testlen = srio_byte_len[i/20];
+		srio_write(SRIO_WRITEBUF, SRIO_TARGETBUF_ADDR, srio_testlen);
 
 		for (k = 1; k < 1000000; k++)
 			;
 
-		srio_read(SRIO_TARGETBUF_ADDR, SRIO_READBUF, SRIO_TESTLEN);
-
+		srio_read(SRIO_TARGETBUF_ADDR, SRIO_READBUF, srio_testlen);
 		for (k = 1; k < 1000000; k++)
 			;
 
 		if (memcmp(SRIO_WRITEBUF, SRIO_READBUF, SRIO_TESTLEN) == 0)
-			printf("\t SUCCESS: SRIO transfer number %d\n", i);
+			printf("SUCCESS: SRIO transfer number %d\n", i);
 		else
-			printf("\t FAIL: SRIO transfers number %d\n", i);
+			printf("FAIL: SRIO transfers number %d\n", i);
 	}
 
 }
@@ -216,14 +219,30 @@ void srio_read(unsigned int src, unsigned int dst, unsigned int len) {
 	SRIO_LSU1_REG2 = dst;/* 32-bit DSP byte address for the source of the LSU transaction */
 	SRIO_LSU1_REG3 = len;/* Number of data bytes to read or write, up to 4K bytes */
 	SRIO_LSU1_REG4 = 0x0000AB00; //outportID=0,priority=0,xambs=0,idsize=0 8bitid,DestID=0x00AB,Interrupt Req=0
+
+#if NREAD_FUNC_OVERHEAD || NREAD_SPEED_TEST
+	time_start = clock();
+#endif
+#if NREAD_FUNC_OVERHEAD && (!NREAD_SPEED_TEST)
+	time_stop = clock();
+	nread_overhead = time_stop - time_start;
+	printf("NREAD with clock() overhead are %d cycles.\n", nread_overhead);
+#endif
 	SRIO_LSU1_REG5 = 0x00000024; //Drbll Info=0,Hop Count=0,Packet Type=0x24 NREAD
 
 	/* Wait for the completion of transfer */
 	do {
 		rdata = SRIO_LSU1_REG6;
 	} while (rdata & 0x00000001);
-
-	printf("rlsu_reg6 = %d  ", rdata);
+#if NREAD_SPEED_TEST
+	time_stop = clock();
+	if(0 == rdata) {
+		cycles = time_stop - time_start - NREAD_OVERHEAD;
+		printf("\nCycles of reading %d bytes with NREAD are %d. ", len, cycles);
+		printf("Transfer data rate with NREAD are %.2f MB/s.\n", (float)(len*953.67)/cycles);
+	} else printf("\nTransfer error. I will give up this test.\n");
+#endif
+	printf("rlsu_reg6 = %d\n", rdata);
 }
 
 void srio_write(unsigned int src, unsigned int dst, unsigned int len) {
@@ -235,12 +254,28 @@ void srio_write(unsigned int src, unsigned int dst, unsigned int len) {
 	SRIO_LSU1_REG2 = src;
 	SRIO_LSU1_REG3 = len;
 	SRIO_LSU1_REG4 = 0x0000AB00; //outportID=0,priority=1,xambs=0,idsize=0 8bitid,DestID=0x00AB,Interrupt Req=0
+
+#if NWRITE_FUNC_OVERHEAD || NWRITE_SPEED_TEST
+	time_start = clock();
+#endif
+#if NWRITE_FUNC_OVERHEAD && (!NWRITE_SPEED_TEST)
+	time_stop = clock();
+	nwrite_overhead = time_stop - time_start;
+	printf("NWRITE with clock() overhead are %d cycles.\n", nwrite_overhead);
+#endif
 	SRIO_LSU1_REG5 = 0x00000054; //Drbll Info=0,Hop Count=0,Packet Type=0x54 NWRITE
 
 	/* Wait for the completion of transfer */
 	do {
 		rdata = SRIO_LSU1_REG6;
 	} while (rdata & 0x00000001);
-
+#if NWRITE_SPEED_TEST
+	time_stop = clock();
+	if(0 == rdata) {
+		cycles = time_stop - time_start - NWRITE_OVERHEAD;
+		printf("\nCycles of writing %d bytes with NWRITE are %d. ", len, cycles);
+		printf("Transfer data rate with NWRITE are %.2f MB/s.\n", (float)(len*953.67)/cycles);
+	} else printf("\nTransfer error. I will give up this test.\n");
+#endif
 	printf("wlsu_reg6 = %d  ", rdata);
 }
